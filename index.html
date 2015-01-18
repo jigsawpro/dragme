@@ -33,7 +33,7 @@
       border-radius: 50%;
       background-color: #ff3D00;
       color: #fff;
-      box-shadow: 0 0 6px rgba(0,0,0,.16), 
+      box-shadow: 0 0 6px rgba(0,0,0,.16),
                   0 6px 12px rgba(0,0,0,.32);
     }
     .headline {
@@ -46,6 +46,10 @@
       line-height: 1em;
       font-weight: 600;
       position: absolute;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
     .header {
       position: absolute;
@@ -101,10 +105,11 @@
     </p>
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="jquery.dragme.js"></script>
+  <script src="dragme.js"></script>
   <script>
-    $('#js-draggable').dragMe();
+  new DragMe(document.querySelector('#js-draggable'), {
+    cancel: '.headline'
+  });
   </script>
 
 </body>
