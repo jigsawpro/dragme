@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery DragMe</title>
+  <style type="text/css">
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+    }
+    body {
+      position: relative;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      text-align: center;
+    }
+    a,
+    a:visited {
+      color: #0277bd;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .draggable {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto; /* center that thing! */
+      height: 220px;
+      width: 220px;
+      cursor: move;
+      border-radius: 50%;
+      background-color: #ff3D00;
+      color: #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,.16),
+                  0 6px 12px rgba(0,0,0,.32);
+    }
+    .headline {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto; /* center that thing! */
+      height: 1.1em;
+      text-align: center;
+      font-size: 2em;
+      line-height: 1em;
+      font-weight: 600;
+      position: absolute;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .header {
+      position: absolute;
+      top: 1em;
+      right: 0; left: 0;
+      margin: auto;
+    }
+    .footer {
+      position: absolute;
+      bottom: 1em;
+      right: 0; left: 0;
+      margin: auto;
+    }
+    .ir {
+      border: 0;
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent;
+    }
+    .buffer-icon {
+      display: inline-block;
+      width: 75px;
+      height: 18px;
+      margin: 0 3px;
+      vertical-align: middle;
+      background: url(https://d389zggrogs7qo.cloudfront.net/images/app/buffer-logo@2x.png) no-repeat top left;
+      background-size: 75px 15px;
+    }
+  </style>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <div class="header">
+    <p>
+      Hi, I'm jQuery DragMe,
+    </p>
+    <p>
+      I'm a super light weight (1KB) draggable plugin that uses CSS3 Transforms
+    </p>
+    <a href="https://github.com/bufferapp/jquery-dragme">Download or Fork me on Github</a>
+  </div>
+
+  <div id="js-draggable" class="draggable">
+    <h1 class="headline">
+      Drag me!
+    </h1>
+  </div>
+
+  <div class="footer">
+    <p>
+      Made with love by <a href="https://bufferapp.com" class="buffer-icon ir">Buffer</a>
+    </p>
+  </div>
+
+  <script src="dragme.js"></script>
+  <script>
+  new DragMe(document.querySelector('#js-draggable'), {
+    cancel: '.headline'
+  });
+  </script>
+
+</body>
+</html>
